@@ -1,64 +1,49 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Entidades;
 
-import Enumerados.TipoDeResultado;
-import dao.JugadasDao;
+import Dao.JugadasDao;
+import Dao.JugadorDao;
+import Enumerados.Resultado;
 import java.util.ArrayList;
+import java.util.List;
 
-/**
- *
- * @author alumno
- */
 public class Jugadas {
-    private Jugador jugador;
-    private Juego juego;
-    private TipoDeResultado resultado;
     
-    public Jugadas(Jugador jugador, Juego juego, TipoDeResultado res){
-        this.jugador=jugador;
-        this.juego=juego;
-        this.resultado=res;
+private Jugador mijugador;
+private Juego mijuego;
+private Resultado resultado;
+
+    public Jugadas(Jugador mijugador, Juego mijuego, Resultado resultado) {
+        this.mijugador = mijugador;
+        this.mijuego = mijuego;
+        this.resultado = resultado;
     }
 
-    public Jugador getJugador() {
-        return jugador;
+    public Juego getMijuego() {
+        return mijuego;
     }
 
-    public void setJugador(Jugador jugador) {
-        this.jugador = jugador;
+    public void setMijuego(Juego mijuego) {
+        this.mijuego = mijuego;
     }
 
-    public Juego getJuego() {
-        return juego;
-    }
-
-    public void setJuego(Juego juego) {
-        this.juego = juego;
-    }
-
-    public TipoDeResultado getResultado() {
+    public Resultado getResultado() {
         return resultado;
     }
 
-    public void setResultado(TipoDeResultado resultado) {
+    public void setResultado(Resultado resultado) {
         this.resultado = resultado;
+    }
+    public static ArrayList<String> retornarJugadas(){
+        JugadasDao playerDao= new JugadasDao();
+        return playerDao.retornarJugadas();    
     }
 
     @Override
     public String toString() {
-        return "Jugadas{" + "jugador=" + jugador + ", juego=" + juego + ", resultado=" + resultado + '}';
+        return "Jugadas{" + "mijugador=" + mijugador + ", mijuego=" + mijuego + ", resultado=" + resultado + '}';
     }
-    
-    public static ArrayList<String> listarJugadas(){
-        JugadasDao jugadas= new JugadasDao();
-        return jugadas.listarJugadas();
-    }
-    
-    
-    
+
+ 
+ 
     
 }
