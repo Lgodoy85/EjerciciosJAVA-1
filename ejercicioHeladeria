@@ -1,0 +1,10 @@
+git clone repo //crear carpta de github
+git status   //Dentro del sub directorio clonado
+git add . //agregar todos los archivos .
+git commit -m "Heladeria mas comandos"
+
+git push origin master -f
+
+//alta helado
+//listado
+//formulario de instancia unica : 
