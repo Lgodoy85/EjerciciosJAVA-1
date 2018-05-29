@@ -1,0 +1,10 @@
+ Dado el diagrama de entidad-relación presentado en el ejercicio anterior, escriba una consulta SQL
+que liste todos los paquetes de proyectores cuya ciudad destinataria sea “Tucumán” y tenga un
+costo de envío mayor a 300$ y el nombre de la empresa correspondiente.
+
+SELECT pa.destino , pa.costoEnvio , ge.nombreEmpresa 
+FROM
+PaqueteProyectores pa 
+inner join GestorDePaquetesDeProyectores ge on ge.idGestorDePaquetes = pa.GestorDePaquetesDeProyectores
+WHERE
+pa.destino like "Tucuman" and pa.costoEnvio>300;
